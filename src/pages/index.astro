@@ -1,10 +1,367 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Entrenamiento de fuerza',
+    text: 'Programas guiados para desarrollar potencia, tecnica y disciplina con seguimiento semanal.'
+  },
+  {
+    title: 'Clases funcionales',
+    text: 'Sesiones dinamicas de alta energia para mejorar resistencia, movilidad y coordinacion.'
+  },
+  {
+    title: 'Asesoria nutricional',
+    text: 'Planes simples y sostenibles para transformar tu alimentacion sin perder tu ritmo diario.'
+  }
+];
+
+const stats = [
+  { value: '+1,200', label: 'Miembros activos' },
+  { value: '4 AM - 10 PM', label: 'Horario extendido' },
+  { value: '4.9/5', label: 'Valoracion promedio' }
+];
+
+const slides = [
+  {
+    src: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Zona de pesas del gimnasio con iluminacion intensa',
+    title: 'Fuerza real',
+    text: 'Equipo premium para construir potencia con seguridad.'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Clase grupal de entrenamiento funcional',
+    title: 'Energia en equipo',
+    text: 'Clases que te empujan a rendir al maximo con motivacion constante.'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Entrenamiento personal con barra olimpica',
+    title: 'Resultados visibles',
+    text: 'Rutinas personalizadas para acelerar tu progreso desde el dia uno.'
+  }
+];
 ---
 
 <Layout>
-  <h1 class="font-cinzel text-center text-5xl p-0 font-bold">
-    <span class="text-negro-profundo">Sparta</span>
-    <span class="text-dorado">GYM</span>
-  </h1>
+  <main class="min-h-full overflow-hidden bg-[radial-gradient(circle_at_20%_15%,rgb(242_183_5/0.28),transparent_35%),radial-gradient(circle_at_80%_0%,rgb(217_166_115/0.20),transparent_30%),linear-gradient(135deg,#0d0d0d_0%,#1a2a3a_70%,#0d0d0d_100%)] text-[#f6efe2]">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="bg-orb bg-orb--gold"></div>
+      <div class="bg-orb bg-orb--blue"></div>
+      <div class="bg-orb bg-orb--sand"></div>
+      <div class="bg-grain"></div>
+    </div>
+
+    <section class="relative isolate mx-auto w-[min(1120px,92%)] py-20 md:py-26" data-reveal>
+      <div class="absolute left-[-6%] top-[8%] -z-10 h-70 w-70 rounded-full bg-[conic-gradient(from_60deg,#f2b705,#d9a673,#f2b705)] opacity-45 blur-[80px]"></div>
+      <p class="inline-block rounded-full border border-[#f2b70559] bg-[#0d0d0d8c] px-4 py-2 text-xs uppercase tracking-[0.16em] backdrop-blur-sm">Marketing fitness para Esteli</p>
+      <h1 class="mt-4 flex flex-col font-cinzel text-[clamp(3rem,11vw,7rem)] leading-[0.9] uppercase tracking-[0.03em]">
+        <span>SPARTA</span>
+        <span class="text-dorado [text-shadow:0_0_24px_rgb(242_183_5/0.35)]">GYM</span>
+      </h1>
+      <p class="mt-6 w-full max-w-155 text-[clamp(1rem,2.4vw,1.2rem)] leading-[1.7] text-[#f6efe2e0]">
+        Conquista tu mejor version en un espacio creado para rendir. Promociones activas,
+        entrenadores expertos y una comunidad que no te deja rendirte.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3.5">
+        <a href="#planes" class="inline-flex items-center justify-center rounded-md bg-[linear-gradient(125deg,#f2b705,#d9a673)] px-5 py-3 font-montserrat text-[0.95rem] font-bold tracking-[0.03em] text-[#0d0d0d] shadow-[0_10px_28px_rgb(242_183_5/0.28)] transition hover:-translate-y-0.5">Ver promociones</a>
+        <a href="#contacto" class="inline-flex items-center justify-center rounded-md border border-[#f6efe261] bg-[#f6efe20d] px-5 py-3 font-montserrat text-[0.95rem] font-bold tracking-[0.03em] text-[#f6efe2] transition hover:-translate-y-0.5">Agendar visita</a>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-3 md:grid-cols-3" aria-label="Metricas del gimnasio">
+        {
+          stats.map((item) => (
+            <article class="border border-[#f6efe229] bg-[linear-gradient(180deg,rgb(246_239_226/0.11),rgb(13_13_13/0.08))] px-4 py-4 backdrop-blur-[5px]">
+              <p class="m-0 font-cinzel text-[clamp(1.2rem,3vw,2rem)] text-dorado">{item.value}</p>
+              <span class="text-sm text-[#f6efe2d9]">{item.label}</span>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mx-auto w-[min(1120px,92%)] py-8" aria-label="Galeria del gimnasio" data-reveal>
+      <div class="mb-4 flex items-end justify-between gap-3">
+        <div>
+          <p class="m-0 text-xs uppercase tracking-[0.2em] text-dorado">Galeria Sparta</p>
+          <h2 class="mt-2 font-cinzel text-[clamp(1.5rem,4vw,2.3rem)] leading-[1.1]">Un carrusel con pura actitud</h2>
+        </div>
+        <div class="hidden items-center gap-2 md:flex">
+          <button class="carousel-btn rounded border border-[#f6efe247] px-3 py-2 text-sm transition hover:bg-[#f6efe21a]" data-carousel-prev>Anterior</button>
+          <button class="carousel-btn rounded border border-[#f6efe247] px-3 py-2 text-sm transition hover:bg-[#f6efe21a]" data-carousel-next>Siguiente</button>
+        </div>
+      </div>
+
+      <div class="relative mx-auto h-105 max-w-260 overflow-hidden rounded-xl border border-[#f6efe238] bg-white/5 backdrop-blur-xl md:h-140 perspective-[1400px]">
+        <div class="carousel-track relative flex h-full w-full items-center justify-center" data-carousel-track>
+          {
+            slides.map((slide, index) => (
+              <article class="carousel-slide absolute left-1/2 top-1/2 h-[78%] w-[80%] origin-center overflow-hidden rounded-2xl border border-[#f6efe23b] shadow-[0_30px_80px_rgb(0_0_0/0.45)] transition duration-700 ease-out transform-3d md:w-[72%]">
+                <img src={slide.src} alt={slide.alt} class="h-full w-full object-cover object-center" loading={index === 0 ? 'eager' : 'lazy'} />
+                <div class="pointer-events-none absolute -inset-1 rounded-2xl bg-[radial-gradient(circle_at_50%_15%,rgb(242_183_5/0.45),transparent_55%)] opacity-0 blur-xl transition duration-700" data-carousel-glow></div>
+                <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgb(0_0_0/0.75)_100%)]"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5 md:p-8">
+                  <p class="m-0 text-xs uppercase tracking-[0.18em] text-dorado">{slide.title}</p>
+                  <p class="mt-2 max-w-[48ch] text-sm leading-relaxed text-[#f6efe2e0] md:text-base">{slide.text}</p>
+                </div>
+                <div class="pointer-events-none absolute -bottom-16 left-[8%] right-[8%] h-20 rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgb(242_183_5/0.35),transparent_70%)] opacity-0 blur-2xl transition duration-700" data-carousel-reflection></div>
+              </article>
+            ))
+            
+          }
+        </div>
+
+        <div class="absolute bottom-3 right-3 flex gap-1.5 md:hidden">
+          <button class="carousel-btn rounded border border-[#f6efe247] bg-[#0d0d0da3] px-2.5 py-1.5 text-xs" data-carousel-prev>Anterior</button>
+          <button class="carousel-btn rounded border border-[#f6efe247] bg-[#0d0d0da3] px-2.5 py-1.5 text-xs" data-carousel-next>Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="planes" class="mx-auto w-[min(1120px,92%)] py-10" data-reveal>
+      <div>
+        <p class="m-0 text-xs uppercase tracking-[0.2em] text-dorado">Servicios clave</p>
+        <h2 class="mt-2 max-w-[18ch] font-cinzel text-[clamp(1.7rem,5vw,2.7rem)] leading-[1.15]">Todo lo que necesitas para transformar tu energia en resultados</h2>
+      </div>
+      <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+        {
+          services.map((service, index) => (
+            <article class="border border-[#f2b70540] border-b-4 border-b-dorado bg-[#0d0d0da8] p-5 shadow-[0_18px_40px_rgb(0_0_0/0.22)] opacity-0 translate-y-8 blur-sm transition duration-700 ease-out hover:-translate-y-1 hover:rotate-[-0.5deg] hover:border-[#f2b7058c]" data-reveal data-delay={String(index * 120)}>
+              <h3 class="m-0 text-lg text-[#f6efe2]">{service.title}</h3>
+              <p class="my-3 text-[#f6efe2d9] leading-[1.62]">{service.text}</p>
+              <a href="#contacto" class="font-bold tracking-[0.02em] text-dorado no-underline">Conocer mas</a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mx-auto mb-18 mt-11 w-[min(1120px,92%)]" id="contacto" data-reveal>
+      <p class="m-0 text-xs uppercase tracking-[0.2em] text-dorado">Bienestar integral</p>
+      <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="min-h-full border border-[#f2b70557] bg-[radial-gradient(circle_at_90%_10%,rgb(242_183_5/0.22),transparent_38%),linear-gradient(140deg,rgb(242_183_5/0.22),rgb(13_13_13/0.92)_58%)] px-5 py-5 opacity-0 translate-y-8 blur-sm transition duration-700 ease-out" data-reveal data-delay="80">
+          <h2 class="my-2 font-cinzel text-[clamp(1.7rem,4vw,2.45rem)] leading-[1.2] text-dorado">¿Por que deberias empezar a ejercitarte?</h2>
+          <p class="m-0 max-w-[62ch] leading-[1.65] text-[#f6efe2d9]">
+            Porque ejercitarte mejora tu salud fisica, fortalece tu corazon y tus musculos, y te da
+            mas energia para rendir mejor en tu dia a dia.
+          </p>
+        </div>
+
+        <div class="min-h-full border border-[#d9a6735c] bg-[radial-gradient(circle_at_12%_12%,rgb(26_42_58/0.38),transparent_34%),linear-gradient(150deg,rgb(217_166_115/0.28),rgb(26_42_58/0.86)_62%)] px-5 py-5 opacity-0 translate-y-8 blur-sm transition duration-700 ease-out" data-reveal data-delay="180">
+          <h2 class="my-2 font-cinzel text-[clamp(1.7rem,4vw,2.45rem)] leading-[1.2] text-[#f6efe2]">Cuida tu mente</h2>
+          <p class="m-0 max-w-[62ch] leading-[1.65] text-[#f6efe2d9]">
+            El entrenamiento tambien cuida tu salud mental: reduce el estres, mejora tu estado de
+            animo y te ayuda a sentir mayor confianza y claridad.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<script is:inline>
+  (() => {
+    const track = document.querySelector('[data-carousel-track]');
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    const prevButtons = document.querySelectorAll('[data-carousel-prev]');
+    const nextButtons = document.querySelectorAll('[data-carousel-next]');
+    let current = 0;
+    let autoplayId;
+
+    const paint = () => {
+      slides.forEach((slide, i) => {
+        const raw = i - current;
+        const offset = raw < -Math.floor(slides.length / 2)
+          ? raw + slides.length
+          : raw > Math.floor(slides.length / 2)
+            ? raw - slides.length
+            : raw;
+
+        const abs = Math.abs(offset);
+        const x = offset * 320;
+        const z = 220 - abs * 180;
+        const rotateY = offset * -22;
+        const scale = abs === 0 ? 1 : 0.84;
+        const opacity = abs > 1 ? 0 : 1;
+        const blur = abs === 0 ? 0 : 1.8;
+        const glow = slide.querySelector('[data-carousel-glow]');
+        const reflection = slide.querySelector('[data-carousel-reflection]');
+
+        slide.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+        slide.style.zIndex = String(30 - abs);
+        slide.style.opacity = String(opacity);
+        slide.style.filter = `blur(${blur}px)`;
+        slide.style.pointerEvents = abs === 0 ? 'auto' : 'none';
+
+        if (glow) glow.style.opacity = abs === 0 ? '1' : '0';
+        if (reflection) reflection.style.opacity = abs === 0 ? '0.9' : '0';
+      });
+    };
+
+    const goTo = (index) => {
+      current = (index + slides.length) % slides.length;
+      paint();
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      autoplayId = window.setInterval(() => goTo(current + 1), 4600);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayId) window.clearInterval(autoplayId);
+    };
+
+    prevButtons.forEach((btn) => btn.addEventListener('click', () => {
+      goTo(current - 1);
+      startAutoplay();
+    }));
+
+    nextButtons.forEach((btn) => btn.addEventListener('click', () => {
+      goTo(current + 1);
+      startAutoplay();
+    }));
+
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    track.addEventListener('click', (event) => {
+      const clicked = event.target.closest('.carousel-slide');
+      if (!clicked) return;
+      const idx = slides.indexOf(clicked);
+      if (idx !== -1 && idx !== current) goTo(idx);
+    });
+
+    paint();
+    startAutoplay();
+  })();
+
+  (() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = document.querySelectorAll('[data-reveal]');
+    if (!items.length) return;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      items.forEach((el) => {
+        el.classList.remove('opacity-0', 'translate-y-8', 'blur-sm');
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const delay = Number(el.getAttribute('data-delay') || '0');
+        el.style.transitionDelay = `${delay}ms`;
+        el.classList.remove('opacity-0', 'translate-y-8', 'blur-sm');
+        io.unobserve(el);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    items.forEach((el) => io.observe(el));
+  })();
+
+  (() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const root = document.querySelector('main');
+    const gold = document.querySelector('.bg-orb--gold');
+    const blue = document.querySelector('.bg-orb--blue');
+    const sand = document.querySelector('.bg-orb--sand');
+    if (!root || !gold || !blue || !sand) return;
+
+    let ticking = false;
+
+    const paint = () => {
+      const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+      const progress = Math.min(window.scrollY / maxScroll, 1);
+      const y1 = progress * 26;
+      const y2 = progress * -18;
+      const y3 = progress * 14;
+
+      gold.style.transform = `translate3d(0, ${y1}px, 0)`;
+      blue.style.transform = `translate3d(0, ${y2}px, 0)`;
+      sand.style.transform = `translate3d(0, ${y3}px, 0)`;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(paint);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    paint();
+  })();
+</script>
+
+<style>
+  .bg-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.3;
+    will-change: transform;
+    animation: drift 32s ease-in-out infinite alternate;
+  }
+
+  .bg-orb--gold {
+    width: min(42vw, 500px);
+    height: min(42vw, 500px);
+    left: -8vw;
+    top: -10vh;
+    background: radial-gradient(circle at 40% 40%, rgb(242 183 5 / 0.6), rgb(242 183 5 / 0.05) 70%);
+  }
+
+  .bg-orb--blue {
+    width: min(40vw, 460px);
+    height: min(40vw, 460px);
+    right: -8vw;
+    top: 28vh;
+    opacity: 0.22;
+    background: radial-gradient(circle at 45% 45%, rgb(26 42 58 / 0.8), rgb(26 42 58 / 0.08) 70%);
+    animation-duration: 42s;
+    animation-name: drift-reverse;
+  }
+
+  .bg-orb--sand {
+    width: min(34vw, 400px);
+    height: min(34vw, 400px);
+    left: 24vw;
+    bottom: -10vh;
+    opacity: 0.22;
+    background: radial-gradient(circle at 50% 50%, rgb(217 166 115 / 0.55), rgb(217 166 115 / 0.06) 72%);
+    animation-duration: 38s;
+  }
+
+  .bg-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.09;
+    mix-blend-mode: soft-light;
+    background-image: radial-gradient(rgb(255 255 255 / 0.22) 0.6px, transparent 0.6px);
+    background-size: 4px 4px;
+  }
+
+  @keyframes drift {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(4vw, 3vh, 0) scale(1.08); }
+    100% { transform: translate3d(-3vw, -2vh, 0) scale(0.95); }
+  }
+
+  @keyframes drift-reverse {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-4vw, -2vh, 0) scale(1.05); }
+    100% { transform: translate3d(3vw, 2vh, 0) scale(0.94); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-orb {
+      animation: none;
+    }
+  }
+</style>
