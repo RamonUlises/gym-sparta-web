@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+
+@theme {
+  --color-dorado: #F2B705;
+  --color-dorado-oscuro: #C9952E;
+  --color-amarillo-intenso: #F2C230;
+  --color-negro-profundo: #0D0D0D;
+  --color-azul-oscuro: #1A2A3A;
+  --color-beige-piel: #D9A673;
+
+  --font-montserrat: "Montserrat";
+  --font-cinzel: "Cinzel";
+}

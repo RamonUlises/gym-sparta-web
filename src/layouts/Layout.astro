@@ -1,14 +1,58 @@
+---
+const title = "Gimnasio Sparta";
+const description =
+  "Gimnasio Sparta es la plataforma oficial de Gimnasio Sparta. Conoce nuestros servicios, horarios, promociones y transforma tu vida con entrenamiento profesional.";
+const image = "/images/og-image.jpg";
+const url = "https://gymxfitnessweb.com";
+const author = "Ramon Ulises Hernández Talavera";
+
+import "../styles/global.css";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<title>Gimnasio Sparta</title>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content={author} />
+		<meta name="keywords" content="gimnasio, fitness, entrenamiento, salud, bienestar, ejercicio, clases grupales, entrenamiento personal" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="es" />
+		<meta name="revisit-after" content="7 days" />
+
+		<link rel="canonical" href={url} />
+
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" href="/favicon.ico" />
+
+		<meta property="og:type" content="website" />
+  	<meta property="og:url" content={url} />
+ 		<meta property="og:title" content={title} />
+  	<meta property="og:description" content={description} />
+  	<meta property="og:image" content={image} />
+  	<meta property="og:locale" content="es_NI" />
+  	<meta property="og:site_name" content="Gimnasio Sparta" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+  	<meta name="twitter:url" content={url} />
+  	<meta name="twitter:title" content={title} />
+  	<meta name="twitter:description" content={description} />
+  	<meta name="twitter:image" content={image} />
+
+		<meta name="mobile-web-app-capable" content="yes" />
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  	<meta name="apple-mobile-web-app-title" content="Gimnasio Sparta" />
+
+		<meta name="geo.region" content="NI-ES" />
+  	<meta name="geo.placename" content="Estelí" />
+  	<meta name="geo.position" content="13.0919;-86.3538" />
+  	<meta name="ICBM" content="13.0919, -86.3538" />
 	</head>
-	<body>
+	<body class="font-montserrat">
 		<slot />
 	</body>
 </html>

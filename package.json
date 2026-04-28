@@ -1,7 +1,7 @@
 {
   "name": "gym-sparta-web",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -12,6 +12,26 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.10"
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.1.10",
+    "tailwindcss": "^4.2.4"
+  },
+  "author": "Ramon Ulises Hernández Talavera",
+  "license": "MIT",
+  "keywords": [
+    "gym",
+    "fitness",
+    "web",
+    "development",
+    "marketing",
+    "digital"
+  ],
+  "description": "Sitio web para un gimnasio enfocado en la promoción de sus servicios y el fortalecimiento de estrategias de marketing digital.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RamonUlises/gym-sparta-web"
+  },
+  "bugs": {
+    "url": "https://github.com/RamonUlises/gym-sparta-web/issues"
   }
 }
